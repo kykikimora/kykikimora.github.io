@@ -1,0 +1,77 @@
+/* Base / readability */
+:root {
+  --page-max: 1100px;
+  --gap: 1rem;
+  --pad: 1rem;
+  --card-pad: 1.25rem;
+  --radius: 12px;
+}
+
+body {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #abc69a;
+  min-height: 100vh;
+
+  /* Grid page frame */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.desktop-wrapper {
+  /* page width + centering */
+  width: min(var(--page-max), calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1rem 0;
+
+  /* stack sections with consistent spacing */
+  display: grid;
+  gap: var(--gap);
+}
+
+/* Treat .site-header consistently as a real header container */
+.site-header {
+  display: grid;
+  gap: .5rem;
+  padding: var(--card-pad);
+  background: #eee7ba;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+
+.site-nav {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 1rem;
+}
+
+/* “Card” sections */
+.container {
+  display: grid;
+  gap: .75rem;
+  padding: var(--card-pad);
+  background: #eee7ba;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+
+.job {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: .25rem 1 rem;
+    align-items: baseline;
+}
+
+.job h3 { margin: 0; }
+.job .meta { margin: 0; white-space: nowrap; opacity: .85; }
+.job .desc { grid-column: 1/ -1; margin: 0 }
+
+.footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #ddd;
+}
